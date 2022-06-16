@@ -13,3 +13,21 @@ function toTitleCase(str) {
         return match.toUpperCase();
     });
 }
+//get value from search city button//
+let cityName= "";
+$(document).on("click", ".search-button", () =>{
+    let a = $("#newCity").val();
+    if (s !="") {
+        cityName= toTitleCase(a);
+    }
+    getWeather(cityName);
+});
+getWeather = (x) => {
+    $.ajax({
+        url:`https://api.openweathermap.org/data/2.5/weather?appid=${API_KEY}&q=${x}`,
+        method: "GET",
+    }).then((t) => {
+        console.log(t);
+    });
+    };
+
