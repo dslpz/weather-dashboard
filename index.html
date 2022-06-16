@@ -8,68 +8,80 @@
     <title>Weather Dashboard</title>
 </head>
 <body>
-    <header>Weather Dashboard</header>
-    <div>
-    <!-- search bar -->
-        <div class="searchbar">
-            <div class="city-search" >Search City</div>
-            <input type="'text" placeholder="search..."> 
-            <button id="button" class="search-button">Search</button>
-        </div>
-        <br>
-        
-      </section>
-      <br />
-      <hr />
-      <!-- city name and weather -->
-      <section>
-        <h2 class="city">Houston</h2>
-        <div style="display: inline-flex">
+    <header class="header">
+      <h1>Weather Dashboard</h1>
+      <h4 class="dateTime"></h4>
+    </header>
+    <!-- search -->
+    <section>
+      <!-- searchbar -->
+      <div class="searchbar">
+        <input type="'text" id="newCity" placeholder="Search city..." />
+        <button id="button" class="search-button">Search</button>
+        <div id="searchedCities"></div>
+      </div>
+    </section>
+    <br />
+    <hr />
+    <!-- city name and weather -->
+    <section>
+      <h2 class="city"></h2>
+      <div style="display: inline-flex">
+        <p>
+          <span class="cityWeather"></span>
           <!-- weather icon -->
-          <!-- <img
-            src="http://openweathermap.org/img/wn/01d@2x.png"
-            alt="weather-icon"
-            class="w-icon"
-          /> -->
-          <div class="w-icon"></div>
-          <h3 class="w-temp" style="font-size: 30px"></h3>
-        </div>
-      </section>
-      <!-- humidity wind and UV -->
-      <section>
-        <div style="display: inline-flex">
-          <!-- Humidity -->
+          <img style="vertical-align: middle" class="w-icon" />
+          <!-- temperature in F -->
+          <span
+            class="w-temp"
+            style="font-size: 42px; vertical-align: middle"
+          ></span>
+        </p>
+      </div>
+    </section>
+    <!-- humidity wind and UV -->
+    <section>
+      <div style="display: inline-flex">
+        <!-- Humidity -->
+        <div style="width: 20vw">
+          <h3>Humidity</h3>
           <div>
-            <h3>Humidity</h3>
-            <div class="humid"></div>
-          </div>
-          <!-- Wind Speed -->
-          <div>
-            <h3>Wind Speed</h3>
-            <div class="windSpeed"></div>
-          </div>
-          <!-- UV Index -->
-          <div>
-            <h3>UV Index</h3>
-            <div class="uvIndex"></div>
+            <span class="humid" style="font-size: 30px"></span><sup>%</sup>
           </div>
         </div>
-      </section>
-      <!-- five days forcast -->
-      <section>
-        <h3>Next Five Days Forecast</h3>
-        <div
+        <!-- Wind Speed -->
+        <div style="width: 20vw">
+          <h3>Wind Speed</h3>
+          <div>
+            <span class="windSpeed" style="font-size: 30px"></span
+            ><sup>MPH</sup>
+          </div>
+        </div>
+        <!-- UV Index -->
+        <div style="width: 20vw">
+          <h3>UV Index</h3>
+          <div class="uvIndex" style="font-size: 30px"></div>
+        </div>
+      </div>
+    </section>
+    <br />
+    <hr />
+    <!-- five days forcast -->
+    <section>
+      <h3>Next Five Days Forecast</h3>
+      <div
         style="display: flex; justify-content: space-around"
         class="fiveDays"
       ></div>
     </section>
     <br />
     <br />
-    <script src="script.js"></script>
+    <!-- JavaScript -->
     <script
-    src="https://code.jquery.com/jquery-3.6.0.js"
-    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-    crossorigin="anonymous"> 
-    </script>
-</body>
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
 </html>
