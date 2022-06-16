@@ -46,3 +46,35 @@ getWeather = (x) => {
         fiveDays(lat, lon);
     });
 }
+
+    getUV = (a, b) => {
+        $.ajax({
+          url: `https://api.openweathermap.org/data/2.5/onecall?lat=${a}&lon=${b}&eclude=hourly,daily&appid=${API_KEY}`,
+          method: "GET",
+        }).then((y) => {
+          $(".uvIndex").text(y.current.uvi);
+        });
+        };
+        
+        fiveDays = (c, d) => {
+        $.ajax({
+          url: `https://api.openweathermap.org/data/2.5/forecast?appid=${API_KEY}&lat=${c}&lon=${d}`,
+          method: "GET",
+        }).then((t) => {
+          for (let i = 0; i <= 32; i += 8) {
+            let aa = t.list[i];
+            let dt = new Date(aa.dt * 1000);
+            let bb = dt.toDateString() + "<br />";
+            let cc = `<img src = 'http://openweathermap.org/img/wn/${aa.weather[0].icon}@2x.png' /><br />`;
+            let dd =
+              Math.round(1.8 * (aa.main.temp - 273.15) + 32) +
+              "<sup style='font-size:.5em;'>˚F</sup>";
+            let ee = $("<div>").append(bb).append(cc).append(dd);
+            $(".fiveDays").append(ee);
+          }
+        });
+        };
+        
+        $(document).ready(() => {
+        getWeather("Houston");
+        });
