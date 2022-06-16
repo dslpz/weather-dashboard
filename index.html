@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+</head>
+<body>
+    <header class="header">
+        <h1>Weather Dashboard</h1>
+        <h4 class="dateTime"></h4>
+      </header>
+      <!-- search -->
+      <section>
+        <!-- searchbar -->
+        <div class="searchbar">
+          <input type="'text" id="newCity" placeholder="Search city..." />
+          <button id="button" class="search-button">Search</button>
+          <div id="searchedCities"></div>
+        </div>
+      </section>
+      <br />
+      <hr />
+      <!-- city name and weather -->
+      <section>
+        <h2 class="city">Houston</h2>
+        <div style="display: inline-flex">
+          <!-- weather icon -->
+          <!-- <img
+            src="http://openweathermap.org/img/wn/01d@2x.png"
+            alt="weather-icon"
+            class="w-icon"
+          /> -->
+          <div class="w-icon"></div>
+          <h3 class="w-temp" style="font-size: 30px"></h3>
+        </div>
+      </section>
+      <!-- humidity wind and UV -->
+      <section>
+        <div style="display: inline-flex">
+          <!-- Humidity -->
+          <div>
+            <h3>Humidity</h3>
+            <div class="humid"></div>
+          </div>
+          <!-- Wind Speed -->
+          <div>
+            <h3>Wind Speed</h3>
+            <div class="windSpeed"></div>
+          </div>
+          <!-- UV Index -->
+          <div>
+            <h3>UV Index</h3>
+            <div class="uvIndex"></div>
+          </div>
+        </div>
+      </section>
+      <!-- five days forcast -->
+      <section>
+        <div style="display: inline-flex">
+          <div>
+              <h3></h3>
+          </div>
+          <div>
+              <h3></h3>
+          </div>
+          <div>
+              <h3></h3>
+          </div>
+          <div>
+              <h3></h3>
+          </div>
+          <div>
+              <h3></h3>
+          </div>
+      </div>
+      
+</body>
+
+</html>
